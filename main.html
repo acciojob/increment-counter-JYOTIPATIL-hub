@@ -1,16 +1,49 @@
 <!DOCTYPE html>
-
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increment Counter</title>
+    <!-- Optional: Add Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body {
+            padding-top: 50px; /* Optional: Adds padding to the top of the page */
+        }
+    </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+    <div class="container">
+        <div class="col-md-3">
+            <div class="jumbotron text-center">
+                <h1 id="counter">0</h1> <!-- Initial counter value -->
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <button class="btn btn-danger form-control" onclick="increment()">+</button> <!-- Increment button -->
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-primary form-control" onclick="decrement()">-</button> <!-- Decrement button -->
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script>
+        // JavaScript functions to handle increment and decrement actions
+        var counter = document.getElementById("counter");
+
+        function increment() {
+            counter.innerHTML = parseInt(counter.innerHTML) + 1;
+        }
+
+        function decrement() {
+            if (parseInt(counter.innerHTML) > 0) {
+                counter.innerHTML = parseInt(counter.innerHTML) - 1;
+            }
+        }
+    </script>
 </body>
-
 </html>
+
