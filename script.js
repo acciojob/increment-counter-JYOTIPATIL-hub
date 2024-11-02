@@ -17,3 +17,8 @@
         // Update the counter element with the new value
         counterElement.textContent = counterValue;
     });
+() => {
+  cy.visit(baseUrl);
+  cy.get('#incrementBtn').click();
+  cy.get('#counter', { timeout: 6000 }).should('have.text', '1'); // Timeout adjusted to 6000ms
+}
